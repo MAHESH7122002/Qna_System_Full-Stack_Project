@@ -1,0 +1,257 @@
+,Question,Answer,Level,Topic
+0,Why is Java a platform independent language?,"
+Java language was developed so that it does not depend on any hardware or software because the compiler compiles the code and then converts it to platform-independent byte code which can be run on multiple systems.The only condition to run that byte code is for the machine to have a runtime environment (JRE) installed in it
+",Low,Java
+1,Why is Java not a pure object oriented language?,"
+Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure object oriented language.
+",Low,Java
+2,Difference between Heap and Stack Memory in java. And how java utilizes this.,"
+Stack memory is the portion of memory that was assigned to every individual program. And it was fixed. On the other hand, Heap memory is the portion that was not allocated to the java program but it will be available for use by the java program when it is required, mostly during the runtime of the program.Java Utilizes this memory as - 
+When we write a java program then all the variables, methods, etc are stored in the stack memory.
+And when we create any object in the java program then that object was created in the heap memory. And it was referenced from the stack memory.
+Example- Consider the below java program:class Main {
+   public void printArray(int[] array){
+       for(int i : array)
+           System.out.println(i);
+   }
+   public static void main(String args[]) {
+       int[] array = new int[10];
+       printArray(array);
+   }
+}For this java program. The stack and heap memory occupied by java is -Main and PrintArray is the method that will be available in the stack area and as well as the variables declared that will also be in the stack area. And the Object (Integer Array of size 10) we have created, will be available in the Heap area because that space will be allocated to the program during runtime. 
+",Low,Java
+3,Can java be said to be the complete object-oriented programming language?,"
+It is not wrong if we claim that Java is the complete object-oriented programming language because everything in Java is under the classes and we can access them by creating the objects.But we can even say that Java is not a completely object-oriented programming language because it has the support of primitive data types like int, float, char, boolean, double, etc.Now for the question: Is Java a completely object-oriented programming language? We can say that - Java is not a pure object-oriented programming language, because it has direct access to primitive data types. And these primitive data types don't directly belong to the Integer classes.
+",Low,Java
+4,How is Java different from C++?,"
+
+C++ is only a  compiled language, whereas Java is compiled as well as an interpreted language.
+Java programs are machine-independent whereas a c++ program can run only in the machine in which it is compiled. 
+C++ allows users to use pointers in the program. Whereas java doesn’t allow it. Java internally uses pointers. 
+C++ supports the concept of Multiple inheritances whereas Java doesn't support this. And it is due to avoiding the complexity of name ambiguity that causes the diamond problem.
+
+",Medium,Java
+5,Pointers are used in C/ C++. Why does Java not make use of pointers?,"
+Pointers are quite complicated and unsafe to use by beginner programmers. Java focuses on code simplicity, and the usage of pointers can make it challenging. Pointer utilization can also cause potential errors. Moreover, security is also compromised if pointers are used because the users can directly access memory with the help of pointers.Thus, a certain level of abstraction is furnished by not including pointers in Java. Moreover, the usage of pointers can make the procedure of garbage collection quite slow and erroneous. Java makes use of references as these cannot be manipulated, unlike pointers.
+",Medium,Java
+6,What do you understand by an instance variable and a local variable?,"
+Instance variables are those variables that are accessible by all the methods in the class. They are declared outside the methods and inside the class. These variables describe the properties of an object and remain bound to it at any cost.All the objects of the class will have their copy of the variables for utilization. If any modification is done on these variables, then only that instance will be impacted by it, and all other class instances continue to remain unaffected.Example:class Athlete {
+public String athleteName;
+public double athleteSpeed;
+public int athleteAge;
+}Local variables are those variables present within a block, function, or constructor and can be accessed only inside them. The utilization of the variable is restricted to the block scope. Whenever a local variable is declared inside a method, the other class methods don’t have any knowledge about the local variable.Example:public void athlete() {
+String athleteName;
+double athleteSpeed;
+int athleteAge;
+}
+",Medium,Java
+7,What are the default values assigned to variables and instances in java?,"
+
+There are no default values assigned to the variables in java. We need to initialize the value before using it. Otherwise, it will throw a compilation error of (Variable might not be initialized). 
+But for instance, if we create the object, then the default value will be initialized by the default constructor depending on the data type. 
+If it is a reference, then it will be assigned to null. 
+If it is numeric, then it will assign to 0.
+If it is a boolean, then it will be assigned to false. Etc.
+
+",Medium,Java
+8,What do you mean by data encapsulation?,"
+
+Data Encapsulation is an Object-Oriented Programming concept of hiding the data attributes and their behaviours in a single unit.
+It helps developers to follow modularity while developing software by ensuring that each object is independent of other objects by having its own methods, attributes, and functionalities.
+It is used for the security of the private properties of an object and hence serves the purpose of data hiding.
+
+",Medium,Java
+9, Tell us something about JIT compiler.,"
+
+JIT stands for Just-In-Time and it is used for improving the performance during run time. It does the task of compiling parts of byte code having similar functionality at the same time thereby reducing the amount of compilation time for the code to run.
+The compiler is nothing but a translator of source code to machine-executable code. But what is special about the JIT compiler? Let us see how it works:
+First, the Java source code (.java) conversion to byte code (.class) occurs with the help of the javac compiler.
+Then, the .class files are loaded at run time by JVM and with the help of an interpreter, these are converted to machine understandable code.
+JIT compiler is a part of JVM. When the JIT compiler is enabled, the JVM analyzes the method calls in the .class files and compiles them to get more efficient and native code. It also ensures that the prioritized method calls are optimized.
+Once the above step is done, the JVM executes the optimized code directly instead of interpreting the code again. This increases the performance and speed of the execution.
+
+
+
+",Medium,Java
+10, Can you tell the difference between equals() method and equality operator (==) in Java?,"
+We are already aware of the (==) equals operator. That we have used this to compare the equality of the values. But when we talk about the terms of object-oriented programming, we deal with the values in the form of objects. And this object may contain multiple types of data. So using the (==) operator does not work in this case. So we need to go with the .equals() method.Both [(==) and .equals()] primary functionalities are to compare the values, but the secondary functionality is different. So in order to understand this better, let’s consider this with the example -String str1 = ""InterviewBit"";
+String str2 = ""InterviewBit"";
+ 
+System.out.println(str1 == str2);This code will print true. We know that both strings are equals so it will print true. But here (==) Operators don’t compare each character in this case. It compares the memory location. And because the string uses the constant pool for storing the values in the memory, both str1 and str2 are stored at the same memory location. See the detailed Explanation in Question no 73: Link.Now, if we modify the program a little bit with -String str1 = new String(""InterviewBit"");
+String str2 = ""InterviewBit"";
+ 
+System.out.println(str1 == str2);Then in this case, it will print false. Because here no longer the constant pool concepts are used. Here, new memory is allocated. So here the memory address is different, therefore ( == ) Operator returns false. But the twist is that the values are the same in both strings. So how to compare the values? Here the .equals() method is used..equals() method compares the values and returns the result accordingly.  If we modify the above code with - System.out.println(str1.equals(str2));Then it returns true.
+
+equals() 
+==
+
+
+
+This is a method defined in the Object class. 
+It is a binary operator in Java.
+
+
+The .equals() Method is present in the Object class, so we can override our custom .equals() method in the custom class, for objects comparison.
+It cannot be modified. They always compare the HashCode.
+
+
+This method is used for checking the equality of contents between two objects as per the specified business logic.
+This operator is used for comparing addresses (or references), i.e checks if both the objects are pointing to the same memory location.
+
+
+Note:
+In the cases where the equals method is not overridden in a class, then the class uses the default implementation of the equals method that is closest to the parent class.
+Object class is considered as the parent class of all the java classes. The implementation of the equals method in the Object class uses the == operator to compare two objects. This default implementation can be overridden as per the business logic.
+
+",Medium,Java
+11, How is an infinite loop declared in Java?,"
+Infinite loops are those loops that run infinitely without any breaking conditions. Some examples of consciously declaring infinite loop is:Using For Loop:for (;;)
+{
+   // Business logic
+   // Any break logic
+}Using while loop:while(true){
+   // Business logic
+   // Any break logic
+}Using do-while loop:do{
+   // Business logic
+   // Any break logic
+}while(true);
+",Medium,Java
+12, Briefly explain the concept of constructor overloading,"
+Constructor overloading is the process of creating multiple constructors in the class consisting of the same name with a difference in the constructor parameters. Depending upon the number of parameters and their corresponding types, distinguishing of the different types of constructors is done by the compiler.class Hospital {
+int variable1, variable2;
+double variable3;
+public Hospital(int doctors, int nurses) {
+ variable1 = doctors;
+ variable2 = nurses;
+}
+public Hospital(int doctors) {
+ variable1 = doctors;
+}
+public Hospital(double salaries) {
+ variable3 = salaries
+}
+}Three constructors are defined here but they differ on the basis of parameter type and their numbers.
+",Medium,Java
+13, Define Copy constructor in java.,"
+Copy Constructor is the constructor used when we want to initialize the value to the new object from the old object of the same class. class InterviewBit{
+   String department;
+   String service;
+   InterviewBit(InterviewBit ib){
+       this.departments = ib.departments;
+       this.services = ib.services;
+   }
+}Here we are initializing the new object value from the old object value in the constructor. Although, this can also be achieved with the help of object cloning.
+",Medium,Java
+14, Can the main method be Overloaded?,"
+Yes, It is possible to overload the main method. We can create as many overloaded main methods we want. However, JVM has a predefined calling method that JVM will only call the main method with the definition of - public static void main(string[] args)Consider the below code snippets: class Main {
+    public static void main(String args[]) {
+        System.out.println("" Main Method"");
+    }
+    public static void main(int[] args){
+        System.out.println(""Overloaded Integer array Main Method"");
+    }
+    public static void main(char[] args){
+        System.out.println(""Overloaded Character array Main Method"");
+    }
+    public static void main(double[] args){
+        System.out.println(""Overloaded Double array Main Method"");
+    }
+    public static void main(float args){
+        System.out.println(""Overloaded float Main Method"");
+    }
+}
+",Medium,Java
+15, Comment on method overloading and overriding by citing relevant examples.,"
+In Java, method overloading is made possible by introducing different methods in the same class consisting of the same name. Still, all the functions differ in the number or type of parameters. It takes place inside a class and enhances program readability.The only difference in the return type of the method does not promote method overloading. The following example will furnish you with a clear picture of it.class OverloadingHelp {
+   public int findarea (int l, int b) {
+           int var1;
+           var1 = l * b;
+           return var1;
+   }
+   public int findarea (int l, int b, int h) {
+           int var2;
+           var2 = l * b * h;
+           return var2;
+   }
+}Both the functions have the same name but differ in the number of arguments. The first method calculates the area of the rectangle, whereas the second method calculates the area of a cuboid.Method overriding is the concept in which two methods having the same method signature are present in two different classes in which an inheritance relationship is present. A particular method implementation (already present in the base class) is possible for the derived class by using method overriding.Let’s give a look at this example:class HumanBeing {
+       public int walk (int distance, int time) {
+               int speed = distance / time;
+               return speed;
+       }
+}
+class Athlete extends HumanBeing {
+       public int walk(int distance, int time) {
+               int speed = distance / time;
+               speed = speed * 2;
+               return speed;
+       }
+}Both class methods have the name walk and the same parameters, distance, and time. If the derived class method is called, then the base class method walk gets overridden by that of the derived class.
+",Medium,Java
+16, A single try block and multiple catch blocks can co-exist in a Java Program. Explain.,"
+Yes, multiple catch blocks can exist but specific approaches should come prior to the general approach because only the first catch block satisfying the catch condition is executed. The given code illustrates the same:public class MultipleCatch {
+public static void main(String args[]) {
+ try {
+  int n = 1000, x = 0;
+  int arr[] = new int[n];
+  for (int i = 0; i <= n; i++) {
+   arr[i] = i / x;
+  }
+ }
+ catch (ArrayIndexOutOfBoundsException exception) {
+  System.out.println(""1st block = ArrayIndexOutOfBoundsException"");
+ }
+ catch (ArithmeticException exception) {
+  System.out.println(""2nd block = ArithmeticException"");
+ }
+ catch (Exception exception) {
+  System.out.println(""3rd block = Exception"");
+ }
+}
+}Here, the second catch block will be executed because of division by 0 (i / x). In case x was greater than 0 then the first catch block will execute because for loop runs till i = n and array index are till n-1.
+",Medium,Java
+17," Explain the use of final keyword in variable, method and class.","
+In Java, the final keyword is used as defining something as constant /final and represents the non-access modifier.
+
+final variable:
+When a variable is declared as final in Java, the value can’t be modified once it has been assigned.
+If any value has not been assigned to that variable, then it can be assigned only by the constructor of the class.
+
+
+
+final method:
+A method declared as final cannot be overridden by its children's classes.
+A constructor cannot be marked as final because whenever a class is inherited, the constructors are not inherited. Hence, marking it final doesn't make sense. Java throws compilation error saying - modifier final not allowed here
+
+
+
+
+final class:No classes can be inherited from the class declared as final. But that final class can extend other classes for its usage.
+
+
+",High,Java
+18," Do final, finally and finalize keywords have the same function?","
+All three keywords have their own utility while programming.Final: If any restriction is required for classes, variables, or methods, the final keyword comes in handy. Inheritance of a final class and overriding of a final method is restricted by the use of the final keyword. The variable value becomes fixed after incorporating the final keyword. Example:final int a=100;
+a = 0;  // errorThe second statement will throw an error.Finally: It is the block present in a program where all the codes written inside it get executed irrespective of handling of exceptions. Example:try {
+int variable = 5;
+}
+catch (Exception exception) {
+System.out.println(""Exception occurred"");
+}
+finally {
+System.out.println(""Execution of finally block"");
+}Finalize: Prior to the garbage collection of an object, the finalize method is called so that the clean-up activity is implemented. Example:public static void main(String[] args) {
+String example = new String(""InterviewBit"");
+example = null;
+System.gc(); // Garbage collector called
+}
+public void finalize() {
+// Finalize called
+} 
+",High,Java
+19, Is it possible that the ‘finally’ block will not be executed? If yes then list the case.,"
+ Yes. It is possible that the ‘finally’ block will not be executed. The cases are-
+Suppose we use System.exit() in the above statement.
+If there are fatal errors like Stack overflow, Memory access error, etc.
+
+",High,Java
