@@ -1,0 +1,56 @@
+ 
+ .view{
+    background-color: white;
+    background-size: 100%;
+
+ }
+#allQnas_div {
+    width: 500px;  
+    margin:50px;
+    border-radius: 10px;
+}
+
+#x{
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;  
+    margin:50px;
+    border-radius: 10px;
+    background-color: azure;
+ }
+
+ #y{
+    display: flex;
+    justify-content: space-between;
+    background-color: azure;
+    width: 900px;  
+    height: 250px;
+    margin:50px;
+    border-radius: 10px;
+
+
+ }
+
+#img_topic{
+    width: 300px;
+    height: 250px;
+}
+
+#topic_select{
+    
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background-color:azure;
+}
+
+#QnasBtn{
+    margin-left: 50px;
+    height: 40px;
+}
+
+#topicBtn{
+    margin-left: 20px;
+    height: 40px;
+}

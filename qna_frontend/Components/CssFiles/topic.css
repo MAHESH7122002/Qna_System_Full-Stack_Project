@@ -1,0 +1,28 @@
+.hel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+#question,#answer{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+#TopicQnas
+{ 
+    background-image: url("https://st4.depositphotos.com/1062624/20892/i/450/depositphotos_208923200-stock-illustration-abstract-blue-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 585px;
+}
+ 
+ 
+
+#question{
+    background-color:rgb(241, 220, 156);
+    height: 75px;
+}
+#answer{
+    background-color:ghostwhite;
+}

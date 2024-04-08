@@ -1,0 +1,33 @@
+.card{
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;  
+    margin:50px;
+    border-radius: 10px;
+    background-color: azure;
+}
+.profile{
+width: 200px;
+height: 200px;
+}
+#detais{
+    text-align: left;
+    width: 300px; 
+}
+#useDetails{
+    background-color:cornflowerblue;
+    height: 585px;
+}
+p{
+font-family: 'Times New Roman', Times, serif;
+}
+
+#card{
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    width: 420px;  
+    border-radius: 10px;
+    background-color: azure;
+ }
